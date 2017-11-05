@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>Calculator</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<script>
+	function show(text)
+	{
+		container.display.value += text;
+		container.tempdisplay.value = eval(container.display.value)
+	}
+	function del()
+	{
+		container.display.value = " ";
+		container.tempdisplay.value = "total";
+	}
+	function backspace()
+	{
+		var len = container.display.value.length;
+		var condition=1;
+		
+		container.display.value = container.display.value.slice(0, len-1);
+		if(len>condition)
+		{container.tempdisplay.value = eval(container.display.value);}
+		else
+		{container.tempdisplay.value="total";}
+	}
+	</script>
+<body style="background-color:skyblue;">
+	<center>
+	<h1 style="font-color: white;">Calculator<h1>
+	<hr>
+	<div id="calcucator">
+		<!--<input name="display">number here!!</div>-->
+		<form name="container">
+			<input type="text" id="input" name="display">
+			<button type="button" id="demo" onclick="backspace()"> del </button>
+			<br>
+		    <input type="text" name="tempdisplay" id="tempinput" placeholder="total">
+			<br><br>
+			<button type="button" id="demo_del" style="background-color: #f44336;" onclick="del()"> Esc </button>
+			
+			<br><br>
+			<button type="button" id="demo" onclick="show('1') "> 1 </button>
+			<button type="button" id="demo" onclick="show('2')">  2 </button>
+			<button type="button" id="demo" onclick="show('3')">  3 </button>
+			<button type="button" id="demo" class="operation" onclick="show('-')">  - </button>
+	
+			<br><br>
+			<button type="button" id="demo" onclick="show('4')">  4 </button>
+			<button type="button" id="demo" onclick="show('5')">  5 </button>
+			<button type="button" id="demo" onclick="show('6')">  6 </button>
+			<button type="button" id="demo" class="operation" onclick="show('*')">  * </button>
+			<br><br>
+			<button type="button" id="demo" onclick="show('7')">  7 </button>
+			<button type="button" id="demo" onclick="show('8')">  8 </button>
+			<button type="button" id="demo" onclick="show('9')">  9 </button>
+			<button type="button" id="demo" class="operation" onclick="show('/')">  / </button>
+			<br><br>
+			
+			<button type="button" id="demo" style="background-color: #4CAF50;" onclick="container.display.value = eval(container.display.value)"> = </button>
+			<button type="button" id="demo" onclick="show('0')">  0 </button>
+			<button type="button" id="demo" onclick="show('.')">  . </button>
+			<button type="button" id="demo" class="operation" onclick="show('+')">  + </button>
+			
+			<br><br>
+			<h5>NITISH</h5>
+		</form>
+	</div>
+	<hr>
+	&copy2017 nitish_kumar Btech NIT Jalandhar
+	</center>
+</body>	
