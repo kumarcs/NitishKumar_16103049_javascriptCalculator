@@ -26,6 +26,34 @@
 				{container.tempdisplay.value = eval(container.display.value)}
 			prev=container.tempdisplay.value;
 		}
+		function showfromkb(text)
+		{
+			var condition=1;
+			
+			if(flag==condition)
+			{container.display.value = "";
+			flag=0;}
+			if(prev==container.tempdisplay.value)
+				{ container.tempdisplay.value="input valid expression"}
+			var evalo=eval(container.display.value);
+			
+			if(evalo == "Infinity")
+				{container.tempdisplay.value = "divided by zero";
+				flag=1;}
+			else
+				{container.tempdisplay.value = eval(container.display.value)}
+			prev=container.tempdisplay.value;
+		}
+		function resultfromkb()
+		{
+			var evalo=eval(container.display.value);
+			var check=evalo;
+			if(evalo == "Infinity")
+			{container.display.value = "divided by zero";
+			container.tempdisplay.value = "divided by zero";}
+			else
+			{container.tempdisplay.value = eval(container.display.value)}
+		}
 		function showop(text)
 		{
 			flag=0;
@@ -40,16 +68,6 @@
 			else
 				{container.tempdisplay.value = eval(container.display.value)}
 			prev=container.tempdisplay.value;
-		}
-		function showfromkb(text)
-		{
-			var evalo=eval(container.display.value);
-			var excepcondition="Infinity";
-			if(evalo == excepcondition)
-			{container.tempdisplay.value = "divided by zero";
-			flag=1;}
-			else
-			{container.tempdisplay.value = eval(container.display.value)}
 		}
 		function del()
 		{
@@ -84,7 +102,10 @@
 		
 		function search(ele) {
 		if(event.key === 'Enter') {
-			container.tempdisplay.value = eval(container.display.value);}
+			var text=container.display.value;
+			showfromkb(text);
+			resultfromkb()
+			container.display.value="";}
 		}
 		function _initialise()
 		{
