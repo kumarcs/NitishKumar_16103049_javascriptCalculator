@@ -1,4 +1,4 @@
-# simple-calculator-using-HTML5-CSS-Javascript
+# calculator-using-HTML5-CSS-Javascript
 Its an instant result displaying calculator which performs basic operations
 
 This calculator runs on browser. You just have to:-
