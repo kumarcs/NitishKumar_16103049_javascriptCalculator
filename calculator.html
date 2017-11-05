@@ -112,6 +112,10 @@
 		prev="0";
 		container.tempdisplay.value="0";
 		}
+		function ans_show()
+		{
+		container.display.value=container.tempdisplay.value;
+		}
 		</script>
 </head>
 <body style="background-color:skyblue;" onload="_initialise()">
@@ -127,8 +131,9 @@
 			<br>
 		    <input type="text" name="tempdisplay" id="tempinput" placeholder="total">
 			<br><br>
-			<button type="button" id="demo_del" style="background-color: #f44336;" onclick="del()"> Esc </button>
 			
+			<button type="button" id="demo_del" style="background-color: #f44336;" onclick="del()"> Esc </button>
+			<button type="button" id="demo_del" onclick="ans_show()">  Ans </button>
 			<br><br>
 				<button type="button" id="demo" onclick="show('1') "> 1 </button>
 				<button type="button" id="demo" onclick="show('2')">  2 </button>
@@ -151,10 +156,11 @@
 				<button type="button" id="demo" onclick="show('.')">  . </button>
 				<button type="button" id="demo" class="operation" onclick="showop('+')">  + </button>
 			<br><br>
+			
 			<h5>NITISH</h5>
 		</form>
 	</div>
 	<hr>
 	&copy2017 nitish_kumar Btech NIT Jalandhar
 	</center>
-</body>	 
+</body>	
