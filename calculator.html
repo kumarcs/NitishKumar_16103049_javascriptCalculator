@@ -26,6 +26,21 @@
 				{container.tempdisplay.value = eval(container.display.value)}
 			prev=container.tempdisplay.value;
 		}
+		function showop(text)
+		{
+			flag=0;
+			if(prev==container.tempdisplay.value)
+				{ container.tempdisplay.value="input valid expression"}
+			container.display.value += text;
+			var evalo=eval(container.display.value);
+			
+			if(evalo == "Infinity")
+				{container.tempdisplay.value = "divided by zero";
+				flag=1;}
+			else
+				{container.tempdisplay.value = eval(container.display.value)}
+			prev=container.tempdisplay.value;
+		}
 		function showfromkb(text)
 		{
 			var evalo=eval(container.display.value);
@@ -97,23 +112,23 @@
 				<button type="button" id="demo" onclick="show('1') "> 1 </button>
 				<button type="button" id="demo" onclick="show('2')">  2 </button>
 				<button type="button" id="demo" onclick="show('3')">  3 </button>
-				<button type="button" id="demo" class="operation" onclick="show('-')">  - </button>
+				<button type="button" id="demo" class="operation" onclick="showop('-')">  - </button>
 	
 			<br><br>
 				<button type="button" id="demo" onclick="show('4')">  4 </button>
 				<button type="button" id="demo" onclick="show('5')">  5 </button>
 				<button type="button" id="demo" onclick="show('6')">  6 </button>
-				<button type="button" id="demo" class="operation" onclick="show('*')">  * </button>
+				<button type="button" id="demo" class="operation" onclick="showop('*')">  * </button>
 			<br><br>
 				<button type="button" id="demo" onclick="show('7')">  7 </button>
 				<button type="button" id="demo" onclick="show('8')">  8 </button>
 				<button type="button" id="demo" onclick="show('9')">  9 </button>
-				<button type="button" id="demo" class="operation" onclick="show('/')">  / </button>
+				<button type="button" id="demo" class="operation" onclick="showop('/')">  / </button>
 			<br><br>
 				<button type="button" id="demo" style="background-color: #4CAF50;" onclick="result()"> = </button>
 				<button type="button" id="demo" onclick="show('0')">  0 </button>
 				<button type="button" id="demo" onclick="show('.')">  . </button>
-				<button type="button" id="demo" class="operation" onclick="show('+')">  + </button>
+				<button type="button" id="demo" class="operation" onclick="showop('+')">  + </button>
 			<br><br>
 			<h5>NITISH</h5>
 		</form>
